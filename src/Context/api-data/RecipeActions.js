@@ -33,3 +33,32 @@ export const get_Recipe_By_ID = async (id) => {
 
   return data
 }
+
+export const get_All_Categories = async () => {
+  const response = fetch(
+    'https://www.themealdb.com/api/json/v1/1/categories.php'
+  )
+
+  const data = (await response)
+    .json()
+    .then((data) => {
+      return data.categories
+    })
+    .catch((err) => alert(err))
+
+  return data
+}
+export const get_Recipies_By_Category = async (query) => {
+  const response = fetch(
+    'https://www.themealdb.com/api/json/v1/1/filter.php?c=' + query
+  )
+
+  const data = (await response)
+    .json()
+    .then((data) => {
+      return data.meals
+    })
+    .catch((err) => alert(err))
+
+  return data
+}

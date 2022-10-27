@@ -56,7 +56,7 @@ function RecipePage() {
           <div className="row mt-5">
             <div className="col-12">
               <h1>Ingredients :</h1>
-              <div className="px-5">
+              <div className="px-2">
                 {recipe[`strIngredient1`] && getMeasures()}
                 {measures.map((measure, index) => (
                   <p key={index}>{measure}</p>
@@ -69,7 +69,7 @@ function RecipePage() {
               <h1>Instructions :</h1>
               {recipe.strInstructions &&
                 recipe.strInstructions.split('\n').map((i, index) => (
-                  <p className="px-5" key={index}>
+                  <p className="px-2" key={index}>
                     {i}
                   </p>
                 ))}

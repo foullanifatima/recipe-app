@@ -1,27 +1,24 @@
-import CardRecipe from '../Components/CardRecipe'
-import { useContext } from 'react'
+import { useEffect, useContext } from 'react'
+import { get_Recipies_By_Category } from '../Context/api-data/RecipeActions'
 import RecipeContext from '../Context/api-data/RecipeContext'
-import SearchForm from '../Components/SearchForm'
+import { useParams } from 'react-router-dom'
 import SpinnerLoading from '../Components/SpinnerLoading'
 import { Link } from 'react-router-dom'
-function Home() {
-  const { loading, recipies } = useContext(RecipeContext)
+import CardRecipe from '../Components/CardRecipe'
 
+function ListMealByCategory() {
+  const { loading, recipies_by_category, dispatch } = useContext(RecipeContext)
+  const params = useParams()
+  useEffect(() => {
+    const get_Recipies = async () => {
+      dispatch({ type: 'SET_LOADING' })
+      const data = await get_Recipies_By_Category(params.category)
+      dispatch({ type: 'GET_BY_CATEGORIES', payload: data })
+    }
+    get_Recipies()
+  }, [params.category, dispatch])
   return (
-    <div className="container my-5">
-      <div className="row justify-content-center align-items-center">
-        <div className="col-lg-7 col-md-12 col-sm-12 text-center">
-          <h1>Select Your favourite special dish and make your day happy...</h1>
-
-          <p>
-            You can enjoy your favorite meal by searching online and you will
-            get what you want.
-          </p>
-        </div>
-      </div>
-
-      <hr></hr>
-      <SearchForm />
+    <div className="container">
       <div className="row gy-5 my-5 ">
         {/**
          * testing if the user enter text in field
@@ -30,7 +27,7 @@ function Home() {
         {/**
          * testing if api response is null
          */}
-        {recipies == null && (
+        {recipies_by_category == null && (
           <p className="col-12 justify-content-center align-items-center text-center">
             Nothing found !!
           </p>
@@ -39,14 +36,14 @@ function Home() {
          * testing if api response is not null
          */}
         {!loading &&
-          recipies != null &&
-          recipies.map((recipe) => {
+          recipies_by_category != null &&
+          recipies_by_category.map((recipe) => {
             return (
               <div
                 className="col-lg-4 col-md-6 col-sm-12 p-3"
                 key={recipe.idMeal}
               >
-                <Link to={`recipe/${recipe.idMeal}`}>
+                <Link to={`/recipe/${recipe.idMeal}`}>
                   <CardRecipe recipe={recipe} />
                 </Link>
               </div>
@@ -57,4 +54,4 @@ function Home() {
   )
 }
 
-export default Home
+export default ListMealByCategory

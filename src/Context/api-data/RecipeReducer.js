@@ -18,9 +18,17 @@ const recipeReducer = (state, action) => {
         loading: false,
       }
     case 'GET_ALL_CATEGORIES':
-      return {}
+      return {
+        ...state,
+        categories: action.payload,
+        loading: false,
+      }
     case 'GET_BY_CATEGORIES':
-      return {}
+      return {
+        ...state,
+        recipies_by_category: action.payload,
+        loading: false,
+      }
     default:
       return state
   }

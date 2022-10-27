@@ -12,6 +12,21 @@
   width: 350px;
   gap: 16px;
 }
+.img-category {
+  width: 70%;
+  height: 300px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+.card-category {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-direction: column;
+  height: 100%;
+  gap: 16px;
+}
+.card-category:hover,
 .card-recipe:hover {
   border: 1px dashed #cbd2d9;
   padding: 5px;
@@ -79,7 +94,7 @@ p {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  height: 100vh;
+  height: 80vh;
 }
 .notfound-img {
   padding-bottom: 48px;
@@ -119,6 +134,10 @@ header {
 .pointer {
   cursor: pointer;
 }
+a,
+a:hover {
+  all: unset;
+}
 
 ul {
   margin: 0 !important;
@@ -139,4 +158,14 @@ li {
 li:hover {
   color: #f7931e;
   cursor: pointer;
+}
+
+/**
+* Checking responsive styling
+*/
+@media only screen and (max-width: 600px) {
+  .nav,
+  header {
+    justify-content: center !important;
+  }
 }
