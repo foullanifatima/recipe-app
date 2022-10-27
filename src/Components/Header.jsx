@@ -1,12 +1,12 @@
-import React from 'react'
+import logo from '../assets/Logo.png'
 
 function Header() {
   return (
     <header className="header">
-      <div className="container justiify-content-between align-items-center ">
-        <img src="" alt="" className="img-fluid" />
+      <div className="container nav">
+        <img src={logo} alt="Logo" className="img-fluid pointer" />
         <nav>
-          <ul>
+          <ul className="list-items">
             <li>Home</li>
             <li>Categories</li>
           </ul>
