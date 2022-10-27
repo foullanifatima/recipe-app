@@ -1,13 +1,109 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/*Todo styling card recipe */
+.card-recipe {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  width: 350px;
+  gap: 16px;
+}
+.card-recipe:hover {
+  border: 1px dashed #cbd2d9;
+  padding: 5px;
+  cursor: pointer;
+}
+h1 {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 48px;
+  color: #183b56;
+}
+hr {
+  border: 1px dashed #cbd2d9;
+}
+p {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #64748b;
+}
+
+.img-recipe {
+  width: 160px !important;
+  height: 160px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+.title {
+  font-family: 'DM Sans', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+
+  letter-spacing: 0.2px;
+
+  color: #334155;
+}
+.content {
+  display: flex;
+  gap: 4px;
+  flex-direction: column;
+}
+.category {
+  font-family: 'DM Sans', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: #64748b;
+}
+.button {
+  background-color: #f7931e;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
+}
+.error-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+}
+.notfound-img {
+  padding-bottom: 48px;
+}
+.spinner {
+  animation-name: spin;
+  animation-duration: 5000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/**
+ * styling header
+*/
+.header {
+  width: 100%;
+  height: 96px;
+  background-color: #f8fafc;
 }
