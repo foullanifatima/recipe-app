@@ -3,12 +3,12 @@ import RecipeContext from '../Context/api-data/RecipeContext'
 import { get_Recipe_By_Name } from '../Context/api-data/RecipeActions'
 
 function SearchForm() {
-  const { state, dispatch } = useContext(RecipeContext)
+  const { dispatch } = useContext(RecipeContext)
   const [text, setText] = useState('')
   const handleChange = (e) => setText(e.target.value)
   const handleSubmit = async (e) => {
     e.preventDefault()
-    if (text == '') {
+    if (text === '') {
       alert('please make sure to enter content')
     } else {
       dispatch({ type: 'SET_LOADING' })
