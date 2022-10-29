@@ -15,7 +15,7 @@ function App() {
         <Route path="/recipe/:id" element={<RecipePage />} />
         <Route path="/categories/" element={<Categories />} />
         <Route path="categories/:category" element={<ListMealByCategory />} />
-        <Route path="*" element={<NotFound />} />
+        <Route path="/*" element={<NotFound />} />
       </Routes>
     </RecipeProvider>
   )
