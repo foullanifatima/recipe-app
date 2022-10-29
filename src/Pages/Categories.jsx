@@ -12,7 +12,6 @@ function Categories() {
       dispatch({ type: 'SET_LOADING' })
       const data = await get_All_Categories()
       dispatch({ type: 'GET_ALL_CATEGORIES', payload: data })
-      console.log(data)
     }
     get_Categories()
   }, [dispatch])

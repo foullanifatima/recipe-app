@@ -33,7 +33,7 @@ function SearchForm() {
             />
           </div>
           <div className="col-sm-2 d-flex align-items-center justify-content-center">
-            <button className="button m-2" type="submit">
+            <button className="button m-2" type="submit" disabled={!text}>
               Search
             </button>
           </div>
