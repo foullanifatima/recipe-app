@@ -1,4 +1,5 @@
 import image from '../assets/Group.png'
+import { Link } from 'react-router-dom'
 function NotFound() {
   return (
     <div className="error-page">
@@ -9,7 +10,9 @@ function NotFound() {
           We are sorry, the page you requested could not be found. <br></br>
           Please go back to the homepage
         </p>
-        <button className="button">Home Page</button>
+        <Link to="/">
+          <button className="button">Home Page</button>
+        </Link>
       </div>
     </div>
   )

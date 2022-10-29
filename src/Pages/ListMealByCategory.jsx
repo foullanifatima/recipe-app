@@ -20,13 +20,8 @@ function ListMealByCategory() {
   return (
     <div className="container">
       <div className="row gy-5 my-5 ">
-        {/**
-         * testing if the user enter text in field
-         */}
         {loading && <SpinnerLoading />}
-        {/**
-         * testing if api response is null
-         */}
+
         {recipies_by_category == null && (
           <p className="col-12 justify-content-center align-items-center text-center">
             Nothing found !!
